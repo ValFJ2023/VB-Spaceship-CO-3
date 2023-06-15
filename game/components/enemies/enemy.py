@@ -32,7 +32,7 @@ class Enemy(Sprite):
         self.move_x = random.randint(30, 100)
         self.moving_index = 0
 
-    def update(self):
+    def update(self, ships):
         self.rect.y += self.speed_y
 
         if self.movement == LEFT:
@@ -42,7 +42,7 @@ class Enemy(Sprite):
 
         self.update_movement()
         if self.rect.y >= SCREEN_HEIGHT:
-            pass
+            ships.remove(self)
 
     def update_movement(self):
         self.moving_index += 1

@@ -1,5 +1,6 @@
 from game.components.enemies.enemy import Enemy
 
+
 class EnemyManger:
     def __init__(self):
         self.enemies: list[Enemy] = []
@@ -12,7 +13,7 @@ class EnemyManger:
         #     pass
 
         for enemy in self.enemies:
-            enemy.update()
+            enemy.update(self.enemies)
 
     def draw(self, screen):
         for enemy in self.enemies:
